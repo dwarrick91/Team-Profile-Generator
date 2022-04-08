@@ -19,7 +19,9 @@ const fs = require("fs");
 const inquirer = require("inquirer");
 const generateHtml = require("./generatehtml")
 
-const managerInfo = [
+
+
+const questions = [
     {
         type: "input",
         message: "What is your team manager's name?",
@@ -46,7 +48,7 @@ const managerInfo = [
     choices: ["Add an engineer", "Add an Intern", "Done creating members"],
 }
 ]
-console.log(managerInfo);
+
 //  createTeam () => {}
 function createHtml(answers) {
     const layout = generateHtml(answers);
@@ -56,7 +58,7 @@ function createHtml(answers) {
     );
   }
   function init() {
-    inquirer.prompt(managerInfo).then((answers) => {
+    inquirer.prompt(questions).then((answers) => {
       console.log(answers);
   
       createHtml(answers);
