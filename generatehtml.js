@@ -20,6 +20,7 @@ const Manager = require("./lib/manager");
 
 
 function generateManagerCard (manager) {
+  console.log(manager.officeNumber);
 return `<section  class="col-sm d-flex justify-content-around">
 <div class="card align-self-center shadow-lg p-3 mb-5 bg-white rounded " style="width: 18rem">
 <div class="card-body p-3 mb-2 bg-primary text-white ">
@@ -29,7 +30,7 @@ return `<section  class="col-sm d-flex justify-content-around">
 <ul class="list-group list-group-flush">
 <li class="list-group-item">${manager.id}</li>
 <li class="list-group-item">${manager.email}</li>
-<li class="list-group-item">${manager.officeNum}</li>
+<li class="list-group-item">${manager.officeNumber}</li>
 </ul>
 <div class="card-body">
 </div>
@@ -45,7 +46,7 @@ function generateEngineerCard (engineer) {
   <ul class="list-group list-group-flush">
   <li class="list-group-item">${engineer.id}</li>
   <li class="list-group-item">${engineer.email}</li>
-  <li class="list-group-item">${engineer.gitHub}</li>
+  <li class="list-group-item">${engineer.github}</li>
   </ul>
   <div class="card-body">
   </div>

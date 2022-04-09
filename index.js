@@ -44,7 +44,7 @@ const managerQuestions = () => {
       {
         type: "input",
         message: "What is your team manager's office number?",
-        name: "officeNum",
+        name: "officeNumber",
       },
     ])
     .then((answers) => {
@@ -52,7 +52,7 @@ const managerQuestions = () => {
         answers.name,
         answers.id,
         answers.email,
-        answers.officeNum
+        answers.officeNumber
       );
       teamMembers.push(manager);
       teamMenu();
