@@ -17,53 +17,153 @@
 // THEN I exit the application, and the HTML is generated
 const fs = require("fs");
 const inquirer = require("inquirer");
-const generateHtml = require("./generatehtml")
+const generateHtml = require("./generatehtml");
+const Manager = require("./lib/manager");
+const Intern = require("./lib/intern")
+const Engineer = require("./lib/engineer")
+const teamMembers = [];
 
-
-
-const questions = [
-    {
+const managerQuestions = () => {
+  return inquirer
+    .prompt([
+      {
         type: "input",
         message: "What is your team manager's name?",
         name: "name",
-    },
-    {
+      },
+      {
         type: "input",
-    message: "What is your team manager's employee ID?",
-    name: "id",
-    },
-    {
+        message: "What is your team manager's employee ID?",
+        name: "id",
+      },
+      {
         type: "input",
-    message: "what is your team manager's email address?",
-    name: "email",
-    },
-{
-    type: "input",
-    message: "What is your team manager's office number?",
-    name: "officeNum",
-},
-{type: "list",
-    message: "Do you want to add any additional members?",
-    name: "menu",
-    choices: ["Add an engineer", "Add an Intern", "Done creating members"],
-}
-]
-
-//  createTeam () => {}
-function createHtml(answers) {
-    const layout = generateHtml(answers);
-    console.log(layout);
-    fs.writeFile("teamprofile.html", layout, (err) =>
-      err ? console.log(err) : console.log("Success!")
-    );
-  }
-  function init() {
-    inquirer.prompt(questions).then((answers) => {
-      console.log(answers);
-  
-      createHtml(answers);
+        message: "what is your team manager's email address?",
+        name: "email",
+      },
+      {
+        type: "input",
+        message: "What is your team manager's office number?",
+        name: "officeNum",
+      },
+    ])
+    .then((answers) => {
+      const manager = new Manager(
+        answers.name,
+        answers.id,
+        answers.email,
+        answers.officeNum
+      );
+      teamMembers.push(manager);
+      teamMenu();
     });
-  }
-  
-  // Function call to initialize app
-  init();
+};
+
+const teamMenu = () => {
+  return inquirer
+    .prompt([
+      {
+        type: "list",
+        message: "Do you want to add any additional members?",
+        name: "menu",
+        choices: ["Add an engineer", "Add an Intern", "Done creating members"],
+      },
+    ])
+    .then((userChoice) => {
+      console.log(userChoice);
+      if (userChoice.menu === "Add an engineer") {
+        engineerQuestions();
+      } else if (userChoice.menu === "Add an Intern") {
+        internQuestions();
+      } else {
+        createHtml(teamMembers);
+      }
+    });
+};
+const engineerQuestions = () => {
+  return inquirer
+    .prompt([
+      {
+        type: "input",
+        message: "What is your team engineer's name?",
+        name: "name",
+      },
+      {
+        type: "input",
+        message: "What is your team engineer's employee ID?",
+        name: "id",
+      },
+      {
+        type: "input",
+        message: "what is your team engineer's email address?",
+        name: "email",
+      },
+      {
+        type: "input",
+        message: "What is your team engineer's GitHub Username?",
+        name: "gitHub",
+      },
+    ])
+    .then((answers) => {
+      const engineer = new Engineer(
+        answers.name,
+        answers.id,
+        answers.email,
+        answers.gitHub
+      );
+      teamMembers.push(engineer);
+      teamMenu();
+    });
+};
+
+const internQuestions = () => {
+  return inquirer
+    .prompt([
+      {
+        type: "input",
+        message: "What is your team intern's name?",
+        name: "name",
+      },
+      {
+        type: "input",
+        message: "What is your team intern's employee ID?",
+        name: "id",
+      },
+      {
+        type: "input",
+        message: "what is your team intern's email address?",
+        name: "email",
+      },
+      {
+        type: "input",
+        message: "What is your team intern's school?",
+        name: "school",
+      },
+    ])
+    .then((answers) => {
+      const intern = new Intern(
+        answers.name,
+        answers.id,
+        answers.email,
+        answers.school
+      );
+      teamMembers.push(intern);
+      teamMenu();
+    });
+};
+
+
+function createHtml(team) {
+  const layout = generateHtml(team);
+  console.log(layout);
+  fs.writeFile("teamprofile.html", layout, (err) =>
+    err ? console.log(err) : console.log("Success!")
+  );
+}
+function init() {
+  managerQuestions()
+
+}
+
+// Function call to initialize app
+init();
