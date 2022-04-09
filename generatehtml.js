@@ -15,43 +15,58 @@ const Manager = require("./lib/manager");
 // if employee type is Engineer
 // then generate Engineer card
 // push Engineer card into array 
-// join Array of cards into our Html stucture
+// join Array of cards into our Html structure
+
+
 
 function generateManagerCard (manager) {
-return `<div class="card-body">
-<h5 class="card-title">${manager.name}</h5>
-<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+return `<section  class="col-sm d-flex justify-content-around">
+<div class="card align-self-center shadow-lg p-3 mb-5 bg-white rounded " style="width: 18rem">
+<div class="card-body p-3 mb-2 bg-primary text-white ">
+<h5 class="card-title bg-blue">${manager.name}</h5>
+<p class="card-text">MANAGER</p>
 </div>
 <ul class="list-group list-group-flush">
 <li class="list-group-item">${manager.id}</li>
 <li class="list-group-item">${manager.email}</li>
-<li class="list-group-item">${manager.school}</li>
+<li class="list-group-item">${manager.officeNum}</li>
 </ul>
-<div class="card-body">`
+<div class="card-body">
+</div>
+</section>`
 }
 function generateEngineerCard (engineer) {
-  return `<div class="card-body">
+  return `<section  class="col-sm d-flex justify-content-around">
+  <div class="card align-self-center shadow-lg p-3 mb-5 bg-white rounded " style="width: 18rem">
+  <div class="card-body p-3 mb-2 bg-primary text-white ">
   <h5 class="card-title">${engineer.name}</h5>
-  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  <p class="card-text">ENGINEER</p>
   </div>
   <ul class="list-group list-group-flush">
   <li class="list-group-item">${engineer.id}</li>
   <li class="list-group-item">${engineer.email}</li>
-  <li class="list-group-item">${engineer.school}</li>
+  <li class="list-group-item">${engineer.gitHub}</li>
   </ul>
-  <div class="card-body">`
+  <div class="card-body">
+  </div>
+  </section>`
   }
   function generateInternCard (intern) {
-    return `<div class="card-body">
+    return `<section  class="col-sm d-flex justify-content-around">
+    <div class="card align-self-center shadow-lg p-3 mb-5 bg-white rounded " style="width: 18rem">
+    <div class="card-body p-3 mb-2 bg-primary text-white ">
     <h5 class="card-title">${intern.name}</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <p class="card-text">INTERN</p>
     </div>
     <ul class="list-group list-group-flush">
     <li class="list-group-item">${intern.id}</li>
     <li class="list-group-item">${intern.email}</li>
     <li class="list-group-item">${intern.school}</li>
     </ul>
-    <div class="card-body">`
+    <div class="card-body">
+    </div>
+    </section>`
+    
     }
 
 
@@ -87,12 +102,15 @@ return`<!DOCTYPE html>
 </head>
 <div class="jumbotron jumbotron-fluid bg-info">
   <div class="container">
-    <h1 class="display-4 align-content-center text-center bg-info ">Fluid jumbotron</h1>
+    <h1 class="display-4 align-content-center text-center bg-info ">Team Profile Generator</h1>
     
   </div>
 </div>
+<section class="row">
 
-${cardsArray.join("")}`
+${cardsArray.join("")}
+
+</section>`
 
     
 } 
