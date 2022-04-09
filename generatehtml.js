@@ -29,7 +29,7 @@ return `<section  class="col-sm d-flex justify-content-around">
 </div>
 <ul class="list-group list-group-flush">
 <li class="list-group-item">${manager.id}</li>
-<li class="list-group-item">${manager.email}</li>
+<li class="list-group-item" ><a class="text-color"  href="mailto:${manager.email}">${manager.email}</a></li>
 <li class="list-group-item">${manager.officeNumber}</li>
 </ul>
 <div class="card-body">
@@ -45,8 +45,8 @@ function generateEngineerCard (engineer) {
   </div>
   <ul class="list-group list-group-flush">
   <li class="list-group-item">${engineer.id}</li>
-  <li class="list-group-item">${engineer.email}</li>
-  <li class="list-group-item">${engineer.github}</li>
+  <li class="list-group-item" ><a class="text-color"  href="mailto:${engineer.email}">${engineer.email}</a></li>
+  <li class="list-group-item"><a class="text-color"  href="https://github.com/${engineer.github}">${engineer.github}</li>
   </ul>
   <div class="card-body">
   </div>
@@ -61,7 +61,7 @@ function generateEngineerCard (engineer) {
     </div>
     <ul class="list-group list-group-flush">
     <li class="list-group-item">${intern.id}</li>
-    <li class="list-group-item">${intern.email}</li>
+    <li class="list-group-item" ><a class="text-color"  href="mailto:${intern.email}">${intern.email}</a></li>
     <li class="list-group-item">${intern.school}</li>
     </ul>
     <div class="card-body">
