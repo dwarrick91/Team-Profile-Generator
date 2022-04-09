@@ -18,13 +18,40 @@ const Manager = require("./lib/manager");
 // join Array of cards into our Html stucture
 
 function generateManagerCard (manager) {
-return `<p>${manager.name}</p>`
+return `<div class="card-body">
+<h5 class="card-title">${manager.name}</h5>
+<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+</div>
+<ul class="list-group list-group-flush">
+<li class="list-group-item">${manager.id}</li>
+<li class="list-group-item">${manager.email}</li>
+<li class="list-group-item">${manager.school}</li>
+</ul>
+<div class="card-body">`
 }
 function generateEngineerCard (engineer) {
-  return `<p>${engineer.name}</p>`
+  return `<div class="card-body">
+  <h5 class="card-title">${engineer.name}</h5>
+  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+  <ul class="list-group list-group-flush">
+  <li class="list-group-item">${engineer.id}</li>
+  <li class="list-group-item">${engineer.email}</li>
+  <li class="list-group-item">${engineer.school}</li>
+  </ul>
+  <div class="card-body">`
   }
   function generateInternCard (intern) {
-    return `<p>${intern.name}</p>`
+    return `<div class="card-body">
+    <h5 class="card-title">${intern.name}</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+    <ul class="list-group list-group-flush">
+    <li class="list-group-item">${intern.id}</li>
+    <li class="list-group-item">${intern.email}</li>
+    <li class="list-group-item">${intern.school}</li>
+    </ul>
+    <div class="card-body">`
     }
 
 
@@ -64,16 +91,7 @@ return`<!DOCTYPE html>
     
   </div>
 </div>
-<div class="card-body">
-<h5 class="card-title"></h5>
-<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-</div>
-<ul class="list-group list-group-flush">
-<li class="list-group-item"></li>
-<li class="list-group-item">A second item</li>
-<li class="list-group-item">A third item</li>
-</ul>
-<div class="card-body">
+
 ${cardsArray.join("")}`
 
     
