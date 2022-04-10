@@ -9,6 +9,9 @@ describe("Engineer", () => {
     expect(engineer.email).toBe("email@email.com")
     expect(engineer.github).toBe("username")
     expect(engineer.getRole()).toBe("Engineer")
+    expect(engineer.getName()).toBe("John")
+    expect(engineer.getId()).toBe("222")
+    expect(engineer.getEmail()).toBe("email@email.com")
 })
 })
 

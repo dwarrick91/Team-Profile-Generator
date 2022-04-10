@@ -8,5 +8,8 @@ describe("Manager", () => {
     expect(manager.email).toBe("email@email.com")
     expect(manager.officeNumber).toBe("A777")
     expect(manager.getRole()).toBe("Manager")
+    expect(manager.getName()).toBe("John")
+    expect(manager.getId()).toBe("222")
+    expect(manager.getEmail()).toBe("email@email.com")
 })
 })

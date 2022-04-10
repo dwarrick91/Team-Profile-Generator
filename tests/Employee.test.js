@@ -8,5 +8,8 @@ describe("Employee", () => {
     expect(employee.name).toBe("John");
     expect(employee.id).toBe("222");
     expect(employee.email).toBe("email@email.com")
+    expect(employee.getName()).toBe("John")
+    expect(employee.getId()).toBe("222")
+    expect(employee.getEmail()).toBe("email@email.com")
 })
 })
