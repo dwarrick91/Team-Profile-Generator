@@ -21,48 +21,48 @@ const Manager = require("./lib/manager");
 
 function generateManagerCard (manager) {
   console.log(manager.officeNumber);
-return `<section  class="col-sm d-flex justify-content-around">
+return `<section  class="col-sm col-md-4 d-flex justify-content-center">
 <div class="card align-self-center shadow-lg p-3 mb-5 bg-white rounded " style="width: 18rem">
 <div class="card-body p-3 mb-2 bg-primary text-white ">
 <h5 class="card-title bg-blue">${manager.name}</h5>
 <p class="card-text">MANAGER</p>
 </div>
 <ul class="list-group list-group-flush">
-<li class="list-group-item">${manager.id}</li>
-<li class="list-group-item" ><a class="text-color"  href="mailto:${manager.email}">${manager.email}</a></li>
-<li class="list-group-item">${manager.officeNumber}</li>
+<li class="list-group-item">ID: ${manager.id}</li>
+<li class="list-group-item" ><a class="text-color"  href="mailto:${manager.email}">Email: ${manager.email}</a></li>
+<li class="list-group-item">Office #: ${manager.officeNumber}</li>
 </ul>
 <div class="card-body">
 </div>
 </section>`
 }
 function generateEngineerCard (engineer) {
-  return `<section  class="col-sm d-flex justify-content-around">
+  return `<section class="col-sm col-md-4 d-flex justify-content-center">
   <div class="card align-self-center shadow-lg p-3 mb-5 bg-white rounded " style="width: 18rem">
   <div class="card-body p-3 mb-2 bg-primary text-white ">
   <h5 class="card-title">${engineer.name}</h5>
   <p class="card-text">ENGINEER</p>
   </div>
   <ul class="list-group list-group-flush">
-  <li class="list-group-item">${engineer.id}</li>
-  <li class="list-group-item" ><a class="text-color"  href="mailto:${engineer.email}">${engineer.email}</a></li>
-  <li class="list-group-item"><a class="text-color"  href="https://github.com/${engineer.github}">${engineer.github}</li>
+  <li class="list-group-item">ID:${engineer.id}</li>
+  <li class="list-group-item" ><a class="text-color"  href="mailto:${engineer.email}">Email: ${engineer.email}</a></li>
+  <li class="list-group-item"><a class="text-color"  href="https://github.com/${engineer.github}">GitHub: ${engineer.github}</li>
   </ul>
   <div class="card-body">
   </div>
   </section>`
   }
   function generateInternCard (intern) {
-    return `<section  class="col-sm d-flex justify-content-around">
+    return `<section  class="col-sm col-md-4 d-flex justify-content-center">
     <div class="card align-self-center shadow-lg p-3 mb-5 bg-white rounded " style="width: 18rem">
     <div class="card-body p-3 mb-2 bg-primary text-white ">
     <h5 class="card-title">${intern.name}</h5>
     <p class="card-text">INTERN</p>
     </div>
     <ul class="list-group list-group-flush">
-    <li class="list-group-item">${intern.id}</li>
-    <li class="list-group-item" ><a class="text-color"  href="mailto:${intern.email}">${intern.email}</a></li>
-    <li class="list-group-item">${intern.school}</li>
+    <li class="list-group-item">ID: ${intern.id}</li>
+    <li class="list-group-item" ><a class="text-color"  href="mailto:${intern.email}">Email: ${intern.email}</a></li>
+    <li class="list-group-item">School: ${intern.school}</li>
     </ul>
     <div class="card-body">
     </div>
