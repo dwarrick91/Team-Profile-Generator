@@ -60,7 +60,7 @@ function generateEngineerCard (engineer) {
     <p class="card-text"><i class="fa-solid fa-graduation-cap"></i>INTERN</p>
     </div>
     <ul class="list-group list-group-flush">
-    <li class="list-group-item">ID: ${intern.id}</li>
+    <li class="list-group-item">ID:${intern.id}</li>
     <li class="list-group-item" ><a class="text-color"  href="mailto:${intern.email}">Email: ${intern.email}</a></li>
     <li class="list-group-item">School: ${intern.school}</li>
     </ul>
