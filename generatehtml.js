@@ -5,7 +5,7 @@
 // then generate manager card
 // push manager card into array 
 
-const Manager = require("./lib/manager");
+
 
 // if employee type is Intern
 // then generate Intern card
@@ -25,7 +25,7 @@ return `<section  class="col-sm col-md-4 d-flex justify-content-center">
 <div class="card align-self-center shadow-lg p-3 mb-5 bg-white rounded " style="width: 18rem">
 <div class="card-body p-3 mb-2 bg-primary text-white ">
 <h5 class="card-title bg-blue">${manager.name}</h5>
-<p class="card-text">MANAGER</p>
+<p class="card-text"><i class="fa-solid fa-mug-hot"></i>MANAGER</p>
 </div>
 <ul class="list-group list-group-flush">
 <li class="list-group-item">ID: ${manager.id}</li>
@@ -39,14 +39,14 @@ return `<section  class="col-sm col-md-4 d-flex justify-content-center">
 function generateEngineerCard (engineer) {
   return `<section class="col-sm col-md-4 d-flex justify-content-center">
   <div class="card align-self-center shadow-lg p-3 mb-5 bg-white rounded " style="width: 18rem">
-  <div class="card-body p-3 mb-2 bg-primary text-white ">
+  <div class="card-body p-3 mb-2 bg-warning text-white ">
   <h5 class="card-title">${engineer.name}</h5>
-  <p class="card-text">ENGINEER</p>
+  <p class="card-text"><i class="fa-solid fa-helmet-safety"></i>ENGINEER</p>
   </div>
   <ul class="list-group list-group-flush">
-  <li class="list-group-item">ID:${engineer.id}</li>
+  <li class="list-group-item">ID: ${engineer.id}</li>
   <li class="list-group-item" ><a class="text-color"  href="mailto:${engineer.email}">Email: ${engineer.email}</a></li>
-  <li class="list-group-item"><a class="text-color"  href="https://github.com/${engineer.github}">GitHub: ${engineer.github}</li>
+  <li class="list-group-item"><a class="text-color"  href="https://github.com/${engineer.github}">GitHub: ${engineer.github}</a></li>
   </ul>
   <div class="card-body">
   </div>
@@ -55,12 +55,12 @@ function generateEngineerCard (engineer) {
   function generateInternCard (intern) {
     return `<section  class="col-sm col-md-4 d-flex justify-content-center">
     <div class="card align-self-center shadow-lg p-3 mb-5 bg-white rounded " style="width: 18rem">
-    <div class="card-body p-3 mb-2 bg-primary text-white ">
+    <div class="card-body p-3 mb-2 bg-success text-white ">
     <h5 class="card-title">${intern.name}</h5>
     <p class="card-text"><i class="fa-solid fa-graduation-cap"></i>INTERN</p>
     </div>
     <ul class="list-group list-group-flush">
-    <li class="list-group-item">ID:${intern.id}</li>
+    <li class="list-group-item">ID: ${intern.id}</li>
     <li class="list-group-item" ><a class="text-color"  href="mailto:${intern.email}">Email: ${intern.email}</a></li>
     <li class="list-group-item">School: ${intern.school}</li>
     </ul>
