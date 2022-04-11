@@ -156,7 +156,7 @@ const internQuestions = () => {
 function createHtml(team) {
   const layout = generateHtml(team);
   console.log(layout);
-  fs.writeFile("teamprofile.html", layout, (err) =>
+  fs.writeFile("dist/teamprofile.html", layout, (err) =>
     err ? console.log(err) : console.log("Success!")
   );
 }

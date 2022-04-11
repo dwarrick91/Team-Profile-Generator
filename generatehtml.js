@@ -57,7 +57,7 @@ function generateEngineerCard (engineer) {
     <div class="card align-self-center shadow-lg p-3 mb-5 bg-white rounded " style="width: 18rem">
     <div class="card-body p-3 mb-2 bg-primary text-white ">
     <h5 class="card-title">${intern.name}</h5>
-    <p class="card-text">INTERN</p>
+    <p class="card-text"><i class="fa-solid fa-graduation-cap"></i>INTERN</p>
     </div>
     <ul class="list-group list-group-flush">
     <li class="list-group-item">ID: ${intern.id}</li>
@@ -99,6 +99,8 @@ return`<!DOCTYPE html>
   <meta name="Description" content="Enter your description here" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="./assets/css/style.css">
+  <script src="https://kit.fontawesome.com/0d277fa621.js" crossorigin="anonymous"></script>
+
   <title>Team Member profiles</title>
 </head>
 <div class="jumbotron jumbotron-fluid bg-info">
